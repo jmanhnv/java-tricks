@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>java-tricks</groupId>
+	<artifactId>java-tricks</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+
+	<name>java-tricks</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Java 9 -->
+		<maven.compiler.target>1.9</maven.compiler.target>
+		<maven.compiler.source>1.9</maven.compiler.source>
+		<maven.compiler.plugin>3.7.0</maven.compiler.plugin>
+		<!-- Java 8 -->
+		<!-- <maven.compiler.target>1.8</maven.compiler.target> -->
+		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
+		<!-- Java 7 -->
+		<!-- <maven.compiler.target>1.7</maven.compiler.target> -->
+		<!-- <maven.compiler.source>1.7</maven.compiler.source> -->
+
+		<!-- JDK 9 -->
+		<jdk9.version>1.9</jdk9.version>
+		<!-- JDK 8 -->
+		<!-- <jdk8.version>1.8</jdk8.version> -->
+		<!-- JDK 7 -->
+		<!-- <jdk7.version>1.7</jdk7.version> -->
+
+		<guava.version>23.0</guava.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>java-tricks</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin}</version>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<configuration>
+							<!-- compile everything to ensure module-info contains right entries -->
+							<!-- required when JAVA_HOME is JDK 8 or below -->
+							<jdkToolchain>
+								<version>9</version>
+							</jdkToolchain>
+							<release>9</release>
+						</configuration>
+					</execution>
+					<execution>
+						<id>base-compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<!-- recompile everything for target VM except the module-info.java -->
+						<configuration>
+							<excludes>
+								<exclude>module-info.java</exclude>
+							</excludes>
+						</configuration>
+					</execution>
+				</executions>
+				<!-- defaults for compile and testCompile -->
+				<configuration>
+					<!-- jdkToolchain required when JAVA_HOME is JDK 9 or above -->
+					<jdkToolchain>
+						<version>[1.5,9)</version>
+					</jdkToolchain>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/config</directory>
+			</resource>
+		</resources>
+	</build>
+</project>
