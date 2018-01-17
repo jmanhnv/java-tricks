@@ -1,25 +1,172 @@
 package algorithms;
 
-// http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
-// refer: http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 public final class Algorithm {
 	/**
+	 * Print-floyds-triangle
+	 * 
+	 * @param noOfRows
+	 * @see http://javaconceptoftheday.com/how-to-print-floyds-triangle-in-java/
+	 */
+	public static void floydsTriangle(final int noOfRows) {
+		int value = 1;
+
+		System.out.println("Here Is Your Floyd's Triangle");
+
+		for (int i = 1; i <= noOfRows; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print(value + "\t");
+
+				value++;
+			}
+
+			System.out.println();
+		}
+	}
+
+	/**
+	 * Print Diamond Of Numbers
+	 * 
+	 * @param noOfRows
+	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
+	 */
+	public static void diamondOfNumbers(final int noOfRows) {
+		// Getting midRow of the diamond
+
+		int midRow = noOfRows / 2;
+
+		// Initializing row with 1
+
+		int row = 1;
+
+		System.out.println("Here Is Your Diamond Of Numbers");
+
+		// Printing upper half of the diamond
+
+		for (int i = midRow; i > 0; i--) {
+			// Printing i spaces at the beginning of each row
+
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+
+			// Printing row value j times at the end of each row
+
+			for (int j = 1; j <= row; j++) {
+				System.out.print(row + " ");
+			}
+
+			System.out.println();
+
+			// Incrementing the row
+
+			row++;
+		}
+
+		// Printing lower half of the diamond
+
+		for (int i = 0; i <= midRow; i++) {
+			// Printing i spaces at the beginning of each row
+
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+
+			// Printing row value j times at the end of each row
+
+			for (int j = row; j > 0; j--) {
+				System.out.print(row + " ");
+			}
+
+			System.out.println();
+
+			// Decrementing the row
+
+			row--;
+		}
+	}
+
+	/**
+	 * Print Diamond Of Stars(*)
+	 * 
+	 * @param noOfRows
+	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
+	 */
+	public static void diamondOfStars(final int noOfRows) {
+		// Getting midRow of the diamond
+
+		int midRow = (noOfRows) / 2;
+
+		// Initializing row with 1
+
+		int row = 1;
+
+		System.out.println("Here Is Your Diamond Of Stars(*)");
+
+		// Printing upper half of the diamond
+
+		for (int i = midRow; i > 0; i--) {
+			// Printing i spaces at the beginning of each row
+
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+
+			// Printing j *'s at the end of each row
+
+			for (int j = 1; j <= row; j++) {
+				System.out.print("* ");
+			}
+
+			System.out.println();
+
+			// Incrementing the row
+
+			row++;
+		}
+
+		// Printing lower half of the diamond
+
+		for (int i = 0; i <= midRow; i++) {
+			// Printing i spaces at the beginning of each row
+
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+
+			// Printing j *'s at the end of each row
+
+			for (int j = row; j > 0; j--) {
+				System.out.print("* ");
+			}
+
+			System.out.println();
+
+			// Decrementing the row
+
+			row--;
+		}
+	}
+
+	/**
 	 * <p>
-	 * 1. Kiểm tra sô�? nguyên tô�?.
+	 * 1. Kiem tra 1 so nguyen co phai la so nguyen to hay khong.
 	 * </p>
 	 * 
 	 * <pre>
-	 * + �?ịnh nghĩa: Là số nguyên lớn hơn 1, chỉ có 2 ước là 1 và chính nó.
-	 * + Các số nguyên tố từ 1-100: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
-	 * + Thuật toán: �?ể kiểm tra 1 số nguyên n có phải số nguyên tố hay không, ta làm theo các bước:
-	 * - Nếu n < 2 thì không phải số nguyên tố.
-	 * - Kiểm tra trong đoạn từ 2..sqrt(n) xem có ước của n không, nếu có tồn tại thì n không phải số nguyên tố
-	 * - Ngược lại, n là số nguyên tố.
+	 * * DN: La so nguyen > 1, chi co hai uoc so la 1 va chinh no.
+	 * * VD cac so nguyen to tu 1-100: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+	 * * Thuat toan: De kiem tra mot so nguyen n co phai la so nguyen to hay khong ta lam nhu sau:
+	 * - Neu n < 2 -> n khong phai la so nguyen to
+	 * - Kiem tra trong doan tu 2..sqrt(n) xem co uoc cua n khong?
+	 * 		+ Neu ton tai thi n khong phai la so nguyen to
+	 * 		+ Nguoc lai, n la so nguyen to.
 	 * </pre>
 	 * 
 	 * @param n
-	 *            số cần kiểm tra
-	 * @return true - nếu là số nguyên tố, false - không phải là số nguyên tố.
+	 *            so nguyen can kiem tra
+	 * @return true - n la so nguyen to, false - n khong phai la so nguyen to.
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
 	public static boolean isPrimeNumber(final int n) {
 		if (n < 2) return false;
@@ -34,46 +181,48 @@ public final class Algorithm {
 
 	/**
 	 * <p>
-	 * 2. Phương pha�?p sàng Eratosthene.
+	 * 2. Phuong phap sang Eratosthene.
 	 * </p>
 	 * 
 	 * <pre>
-	 * + Mục đích: �?ể lập bảng các số nguyên tố nh�? hơn hoặc bằng 1 số n cho trước.
-	 * + Thuật toán: Sử dụng 1 bảng bool isPrimeNumber[0..n+1] để lưu kết quả.
-	 * - Khởi tạo: tất cả các số từ 1->n là nguyên tố.
-	 * - Xóa số 1 ra kh�?i bảng.
-	 * - Lặp: Tìm 1 số nguyên tố đầu tiên trong bảng sau đó xóa tất cả các bội của nó trong bảng.
-	 * - Quá trình lặp kết thúc khi gặp số nguyên tố >= sqrt(n).
-	 * - Tất cả các số chưa bị xóa trong bảng là số nguyên tố.
+	 * * Muc dich: De lap bang cac so nguyen to nho hon hoac bang so n cho truoc.
+	 * * Thuat toan:
+	 * - Su dung 1 mang bool isPrimeNumber[0..n+1] de luu ket qua.
+	 * - Khoi tao tat ca cac so tu 1->n la so nguyen to.
+	 * - Xoa so 1 ra khoi mang.
+	 * - Lap: Tim 1 so nguyen to dau tien trong mang sau do xoa tat ca cac boi cua no trong mang.
+	 * - Qua trinh lap lai ket thuc khi gap so nguyen >= sqrt(n).
+	 * - Tat ca cac so con lai chua bi xoa trong mang la so nguyen to.
 	 * </pre>
 	 * 
 	 * @param n
-	 *            số cần kiểm tra
-	 * @return true - mảng các số nguyên tố cần tìm.
+	 *            so nguyen can kiem tra
+	 * @return true - mang cac so nguyen to can tim.
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static boolean[] eratosthene(int n) {
-		// tao mang boolean
+	public static boolean[] eratosthene(final int n) {
+		// khoi tao mang boolean
 		boolean[] isPrime = new boolean[n + 1];
 
-		// khởi tạo: các số từ 1->n được coi là nguyên tố.
+		// Khoi tao tat ca cac so tu 1->n la so nguyen to
 		for (int i = 0; i <= n; i++) {
 			isPrime[i] = true;
 		}
 
-		// so 1 khong phai so nguyen to
+		// So 1 khong phai so nguyen to
 		isPrime[1] = false;
 		int k = 1;
 
-		// lap cho den khi k <= (int)Math.sqrt(n) sai thi khong lap nua (tham
-		// khao vong lap while)
+		// lap cho den khi k <= (int)Math.sqrt(n) sai thi khong lap nua (tham khao vong lap while)
 		// hay noi cach khac khi nao k <= can bac 2 cua n thi thuc hien vong lap
 		while (k <= (int) Math.sqrt(n)) {
 			k++;
-			// tìm số nguyên tố đầu tiên
+			// tim so nguyen to dau tien
 			while (!isPrime[k])
 				k++;
 
-			// xóa các bội của k kh�?i danh sách các số nguyên tố
+			// Xoa cac boi cua k khoi danh sach cac so nguyen to
 			int j = 2;
 			while (k * j <= n) {
 				isPrime[k * j] = false;
@@ -84,36 +233,45 @@ public final class Algorithm {
 		return isPrime;
 	}
 
-	// ----------------------------------------> START
 	/**
 	 * <p>
-	 * 3. Tìm ươ�?c sô�? chung lơ�?n nhâ�?t.
+	 * 3. Tim Uoc so chung lon nhat (UCLN) cua 2 so a va b.
 	 * </p>
 	 * 
 	 * <pre>
-	 * + �?ịnh nghĩa: Ước số chung lớn nhất (Greatest Common Divisor) của 2 số a và b được định nghĩa như sau: gcd(a,b)=d <=> d là số lớn nhất trong tất cả các ước chung của a và b.
-	 * Uoc so cua 12: U12(1;2;3;4;6;12)
-	 * Uoc so cua 30: U30(1;2;5;6;10;15;30)
-	 * GCD(12;30) = 6
-	 * + Thuật toán: Giải thuật Euclid, định nghĩa đệ qui như sau:
-	 * - gcd(a,0) = a.
-	 * - gcd(a,b) = gcd(b,a mod b).
+	 * * DN: Uoc so chung lon nhat (Greatest Common Divisor) cua 2 so a va b duoc dinh nghia nhu sau:
+	 * 		 GCD(a,b)=d <=> d la uoc so lon nhat trong tat ca cac uoc chung cua a va b.
+	 * * VD: Uoc so cua 12: U12(1;2;3;4;6;12); Uoc so cua 30: U30(1;2;5;6;10;15;30) => GCD(12;30) = 6
+	 * * Thuat toan: Giai thuat Euclid:
+	 * - GCD(a,0) = a.
+	 * - GCD(a,b) = GCD(b,a mod b).
 	 * </pre>
 	 * 
 	 * @param a
 	 * @param b
-	 * @return true - nếu là số nguyên tố, false - không phải là số nguyên tố.
+	 * @return ucln
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static int deQuy_GCD(int a, int b) {
+	public static int gcd(final int a, final int b) {
 		// neu b = 0, uoc chung lon nhat chinh la a
 		if (b == 0) return a;
 
 		// chia lay phan du
 		int temp = a % b;
-		return deQuy_GCD(b, temp);
+		return gcd(b, temp);
 	}
 
-	public static int khuDeQuy_GCD(int a, int b) {
+	/**
+	 * Tim Uoc so chung lon nhat (UCLN) cua 2 so a va b.
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
+	 */
+	public static int removeRecursionGcd(int a, int b) {
 		while (b != 0) {
 			// chia lay phan du
 			int temp = a % b;
@@ -123,70 +281,92 @@ public final class Algorithm {
 
 		return a;
 	}
-	// ----------------------------------------< END
 
 	/**
 	 * <p>
-	 * 4. Tìm bội sô�? chung nhỏ nhâ�?t.
+	 * 4. Tim Boi so chung nho nhat (BCNN) cua 2 so a va b.
 	 * </p>
 	 * 
 	 * <pre>
-	 * + �?ịnh nghĩa: Bội số chung nh�? nhất (Least Common Multiple) của 2 số a và b được định nghĩa LCM(a,b) = m <=> m là số nh�? nhất trong tất cả các bội chung của a và b.
-	 * B(4) = {0;4;8;12;16;20;24;28;32;...}
-	 * B(6) = {0;6;12;18;24;30;36;...}
-	 * => BCNN cua 4 va 6: BC(4;6) = 12 hay LCM(4,6) = 12
-	 * + Thuật toán: Ta có công thức: LCM(a,b) = |a*b|/gcd(a,b)
+	 * * DN: Boi so chung nho nhat (Least Common Multiple) cua 2 so a va b duong dinh nghia:
+	 * 		 LCM(a,b) = m <=> m boi chung nho nhat trong tat cac cac boi chung cua a va b.
+	 * * VD: B(4) = {0;4;8;12;16;20;24;28;32;...}; B(6) = {0;6;12;18;24;30;36;...} => LCM(4;6) = 12
+	 * * Thuat toan: ta co cong thuc: LCM(a,b) = |a*b|/GCD(a,b)
 	 * </pre>
 	 * 
 	 * @param a
 	 * @param b
-	 * @return bội chung nh�? nhất.
+	 * @return bcnn.
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static int LCM(int a, int b) {
+	public static int lcm(final int a, final int b) {
 		// tri tuyet doi a*b
 		int abs = Math.abs(a * b);
 		// su dung ham tim UCLN
-		return abs / khuDeQuy_GCD(a, b);
+		return abs / removeRecursionGcd(a, b);
 	}
 
-	// ----------------------------------------> START
 	/**
 	 * <p>
-	 * 5. Ti�?nh giai thừa.
+	 * 5. Tinh giai thua cua mot so nguyen n.
 	 * </p>
 	 * 
 	 * <pre>
-	 * + Giai thừa của 1 số nguyên dương n là tích tất cả các số nguyên dương nh�? hơn hoặc bằng n.
+	 * + Giai thua cua 1 so nguyen duong n la tich tat ca cac so nguyen duong nho hon hoac bang n.
 	 * </pre>
 	 * 
 	 * @param n
-	 * @return bội chung nh�? nhất.
+	 * @return gia thua cua so nguyen duong n.
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static long deQuy_Factorial(int n) {
+	public static long recusion(final int n) {
 		if (n == 0) return 1;
 
-		return deQuy_Factorial(n - 1) * n;
+		return n * recusion(n - 1);
 	}
 
-	public static long khuDeQuy_Factorial(int n) {
+	/**
+	 * Tinh giai thua so so nguyen n.
+	 * 
+	 * @param n
+	 * @return
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
+	 */
+	public static long removeRecusion(final int n) {
 		long result = 1;
-		for (int i = 1; i <= n; i++) {
+		for (int i = 1; i <= n; i++)
 			result *= i;
-		}
 
 		return result;
 	}
-	// ----------------------------------------< END
 
-	// ----------------------------------------> CALCULATING FACTORIAL
-	public static long factorial(long n) {
+	/**
+	 * Tinh giai thua so so nguyen n.
+	 * 
+	 * @param n
+	 * @return
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
+	 */
+	public static long factorial(final long n) {
 		// WAY - 01
 		if (n == 0) return 1;
 
 		return n * factorial(n - 1);
 	}
 
-	public static int factorial(int n) {
+	/**
+	 * Tinh giai thua so so nguyen n.
+	 * 
+	 * @param n
+	 * @return
+	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
+	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
+	 */
+	public static int factorial(final int n) {
 		// WAY - 02: using loop
 		int fact = 1;
 		for (int i = n; i > 1; i--)
@@ -194,44 +374,20 @@ public final class Algorithm {
 
 		return fact;
 	}
-	// ----------------------------------------< END
 
-	public static void main(String[] args) {
-		// TODO - Testing result
-		// 1. Kiểm tra sô�? nguyên tô�?: Tìm các số nguyên tố từ 1-100
-		System.err.println("*** Kiểm tra sô�? nguyên tô�? (Tìm các số nguyên tố từ 1-100) ***");
-		for (int i = 1; i <= 100; i++) {
-			if (isPrimeNumber(i)) {
-				System.out.println(i);
-			}
-		}
-
-		// 2. Phương pha�?p sàng Eratosthene
-		System.err.println("*** Phương pha�?p sàng Eratosthene (của 100 số đầu tiên) ***");
-		int n = 100;
-		boolean[] isPrime = eratosthene(n);
-		System.out.println("Các số nguyên tố < " + n);
-		for (int i = 2; i < isPrime.length; i++) {
-			if (isPrime[i]) {
-				System.out.println(i);
-			}
-		}
-
-		// 3. Tìm ươ�?c sô�? chung lơ�?n nhâ�?t
-		System.err.println("*** Tìm ươ�?c sô�? chung lơ�?n nhâ�?t (12, 15) ***");
-		int a = 12;
-		int b = 15;
-		System.out.println(deQuy_GCD(a, b));
-		System.out.println(khuDeQuy_GCD(a, b));
-
-		// 4. Tìm bội sô�? chung nhỏ nhâ�?t
-		System.err.println("*** Tìm bội sô�? chung nhỏ nhâ�?t (15, 6) ***");
-		System.out.println(LCM(15, 6));
-
-		// 5. Ti�?nh giai thừa
-		System.err.println("*** Ti�?nh giai thừa [14] ***");
-		System.out.println(deQuy_Factorial(14));
-		System.out.println(khuDeQuy_Factorial(14));
+	/**
+	 * Java Factorial Using Recursion Example This Java example shows how to generate factorial of a given number using
+	 * recursive function.
+	 * 
+	 * @param n
+	 * @return giai thua cua so nguyen n
+	 */
+	public static int fact(final int n) {
+		if (n <= 1)
+			// if the number is 1 then return 1
+			return 1;
+		// else call the same function with the value - 1
+		return n * fact(n - 1);
 	}
 
 }

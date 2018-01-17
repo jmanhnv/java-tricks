@@ -19,23 +19,23 @@ public final class JCollections {
 		return (isNotEmpty(collects) && collects.contains(obj));
 	}
 
-	public static String listToString(final List<String> strings) {
-		return org.springframework.util.StringUtils.collectionToCommaDelimitedString(strings);
-	}
-
-	public static String listToString(final List<String> strings, final String delim) {
-		if (Strings.isNullOrEmpty(delim)) return listToString(strings);
-
-		return org.springframework.util.StringUtils.collectionToDelimitedString(strings, delim);
-	}
-
-	public static String setToString(final Set<String> strings) {
-		return org.springframework.util.StringUtils.collectionToCommaDelimitedString(strings);
-	}
-
-	public static String setToString(final Set<String> strings, final String delim) {
-		if (Strings.isNullOrEmpty(delim)) return setToString(strings);
-
-		return org.springframework.util.StringUtils.collectionToDelimitedString(strings, delim);
-	}
+//	public static String listToString(final List<String> strings) {
+//		return org.springframework.util.StringUtils.collectionToCommaDelimitedString(strings);
+//	}
+//
+//	public static String listToString(final List<String> strings, final String delim) {
+//		if (Strings.isNullOrEmpty(delim)) return listToString(strings);
+//
+//		return org.springframework.util.StringUtils.collectionToDelimitedString(strings, delim);
+//	}
+//
+//	public static String setToString(final Set<String> strings) {
+//		return org.springframework.util.StringUtils.collectionToCommaDelimitedString(strings);
+//	}
+//
+//	public static String setToString(final Set<String> strings, final String delim) {
+//		if (Strings.isNullOrEmpty(delim)) return setToString(strings);
+//
+//		return org.springframework.util.StringUtils.collectionToDelimitedString(strings, delim);
+//	}
 }

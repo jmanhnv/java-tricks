@@ -9,7 +9,7 @@ mvn install:install-file -Dfile=<path-to-file> -DpomFile=<path-to-pomfile>
 ### Go to lib folder and run command as below to install jar file
 ``` Starting 
 ```1.Add Microsoft SQL JDBC driver to Maven
-mvn install:install-file -Dfile=sqlserver\sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
+mvn install:install-file -Dfile=sqlserver\sqljdbc42.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
 
 
 ```2.Add DB2 JDBC driver to Maven

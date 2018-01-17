@@ -38,17 +38,7 @@
 		<sqlserver.version>4.0</sqlserver.version>
 		<postgresql.version>42.1.4</postgresql.version>
 		<db2.version>10.5</db2.version>
-		<barcode.version>2.20.1</barcode.version>
 		<javax.mail.version>1.6.0</javax.mail.version>
-		<captcha.version>1.0</captcha.version>
-		<!-- Full-Text Indexing Libraries -->
-		<lucene.version>7.2.1</lucene.version>
-		<opencsv.version>2.3</opencsv.version>
-		<poi.version>3.17</poi.version>
-		<testng.version>6.13.1</testng.version>
-		<powermock.version>1.7.3</powermock.version>
-		<c3p0.version>0.9.1.2</c3p0.version>
-		<ehcache.version>2.10.4</ehcache.version>
 		<quartz.version>2.3.0</quartz.version>
 	</properties>
 
@@ -80,45 +70,14 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
-			<version>${ehcache.version}</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.ehcache</groupId>
-			<artifactId>ehcache-core</artifactId>
-			<version>${ehcache.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>${c3p0.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
 			<version>${quartz.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.octo.captcha</groupId>
-			<artifactId>jcaptcha</artifactId>
-			<version>${captcha.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>javax.mail-api</artifactId>
 			<version>${javax.mail.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-core</artifactId>
-			<version>${barcode.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.camel</groupId>
-			<artifactId>camel-barcode</artifactId>
-			<version>${barcode.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -187,51 +146,9 @@
 			<version>${mysql.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testng.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.powermock</groupId>
-			<artifactId>powermock-module-testng</artifactId>
-			<version>${powermock.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.22.0-GA</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-analyzers-common</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-core</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queryparser</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.lucene</groupId>
-			<artifactId>lucene-queries</artifactId>
-			<version>${lucene.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>${opencsv.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>${poi.version}</version>
 		</dependency>
 	</dependencies>
 
