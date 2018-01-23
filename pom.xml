@@ -136,7 +136,7 @@
 		<!-- oracle -->
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc7</artifactId>
+			<artifactId>ojdbc8</artifactId>
 			<version>${oracle.version}</version>
 		</dependency>
 		<!-- mysql -->
