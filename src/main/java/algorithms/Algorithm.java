@@ -1,152 +1,12 @@
 package algorithms;
 
+/**
+ * Cac thuat toan co ban.
+ * 
+ * @author Johny
+ *
+ */
 public final class Algorithm {
-	/**
-	 * Print-floyds-triangle
-	 * 
-	 * @param noOfRows
-	 * @see http://javaconceptoftheday.com/how-to-print-floyds-triangle-in-java/
-	 */
-	public static void floydsTriangle(final int noOfRows) {
-		int value = 1;
-
-		System.out.println("Here Is Your Floyd's Triangle");
-
-		for (int i = 1; i <= noOfRows; i++) {
-			for (int j = 1; j <= i; j++) {
-				System.out.print(value + "\t");
-
-				value++;
-			}
-
-			System.out.println();
-		}
-	}
-
-	/**
-	 * Print Diamond Of Numbers
-	 * 
-	 * @param noOfRows
-	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
-	 */
-	public static void diamondOfNumbers(final int noOfRows) {
-		// Getting midRow of the diamond
-
-		int midRow = noOfRows / 2;
-
-		// Initializing row with 1
-
-		int row = 1;
-
-		System.out.println("Here Is Your Diamond Of Numbers");
-
-		// Printing upper half of the diamond
-
-		for (int i = midRow; i > 0; i--) {
-			// Printing i spaces at the beginning of each row
-
-			for (int j = 1; j <= i; j++) {
-				System.out.print(" ");
-			}
-
-			// Printing row value j times at the end of each row
-
-			for (int j = 1; j <= row; j++) {
-				System.out.print(row + " ");
-			}
-
-			System.out.println();
-
-			// Incrementing the row
-
-			row++;
-		}
-
-		// Printing lower half of the diamond
-
-		for (int i = 0; i <= midRow; i++) {
-			// Printing i spaces at the beginning of each row
-
-			for (int j = 1; j <= i; j++) {
-				System.out.print(" ");
-			}
-
-			// Printing row value j times at the end of each row
-
-			for (int j = row; j > 0; j--) {
-				System.out.print(row + " ");
-			}
-
-			System.out.println();
-
-			// Decrementing the row
-
-			row--;
-		}
-	}
-
-	/**
-	 * Print Diamond Of Stars(*)
-	 * 
-	 * @param noOfRows
-	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
-	 */
-	public static void diamondOfStars(final int noOfRows) {
-		// Getting midRow of the diamond
-
-		int midRow = (noOfRows) / 2;
-
-		// Initializing row with 1
-
-		int row = 1;
-
-		System.out.println("Here Is Your Diamond Of Stars(*)");
-
-		// Printing upper half of the diamond
-
-		for (int i = midRow; i > 0; i--) {
-			// Printing i spaces at the beginning of each row
-
-			for (int j = 1; j <= i; j++) {
-				System.out.print(" ");
-			}
-
-			// Printing j *'s at the end of each row
-
-			for (int j = 1; j <= row; j++) {
-				System.out.print("* ");
-			}
-
-			System.out.println();
-
-			// Incrementing the row
-
-			row++;
-		}
-
-		// Printing lower half of the diamond
-
-		for (int i = 0; i <= midRow; i++) {
-			// Printing i spaces at the beginning of each row
-
-			for (int j = 1; j <= i; j++) {
-				System.out.print(" ");
-			}
-
-			// Printing j *'s at the end of each row
-
-			for (int j = row; j > 0; j--) {
-				System.out.print("* ");
-			}
-
-			System.out.println();
-
-			// Decrementing the row
-
-			row--;
-		}
-	}
-
 	/**
 	 * <p>
 	 * 1. Kiem tra 1 so nguyen co phai la so nguyen to hay khong.
@@ -169,11 +29,13 @@ public final class Algorithm {
 	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
 	public static boolean isPrimeNumber(final int n) {
-		if (n < 2) return false;
+		if (n < 2)
+			return false;
 
 		int temp = (int) Math.sqrt(n);
 		for (int i = 2; i <= temp; i++) {
-			if (n % i == 0) return false;
+			if (n % i == 0)
+				return false;
 		}
 
 		return true;
@@ -214,7 +76,8 @@ public final class Algorithm {
 		isPrime[1] = false;
 		int k = 1;
 
-		// lap cho den khi k <= (int)Math.sqrt(n) sai thi khong lap nua (tham khao vong lap while)
+		// lap cho den khi k <= (int)Math.sqrt(n) sai thi khong lap nua (tham khao vong
+		// lap while)
 		// hay noi cach khac khi nao k <= can bac 2 cua n thi thuc hien vong lap
 		while (k <= (int) Math.sqrt(n)) {
 			k++;
@@ -255,7 +118,8 @@ public final class Algorithm {
 	 */
 	public static int gcd(final int a, final int b) {
 		// neu b = 0, uoc chung lon nhat chinh la a
-		if (b == 0) return a;
+		if (b == 0)
+			return a;
 
 		// chia lay phan du
 		int temp = a % b;
@@ -311,8 +175,8 @@ public final class Algorithm {
 	 * <p>
 	 * 5. Tinh giai thua cua mot so nguyen n.
 	 * </p>
-	 * Java Factorial Using Recursion Example This Java example shows how to generate factorial of a given number using
-	 * recursive function.
+	 * Java Factorial Using Recursion Example This Java example shows how to
+	 * generate factorial of a given number using recursive function.
 	 * 
 	 * <pre>
 	 * + Giai thua cua 1 so nguyen duong n la tich tat ca cac so nguyen duong nho hon hoac bang n.
@@ -324,7 +188,8 @@ public final class Algorithm {
 	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
 	public static long factorial(final int n) {
-		if (n == 0) return 1;
+		if (n == 0)
+			return 1;
 
 		return n * factorial(n - 1);
 	}
@@ -339,7 +204,8 @@ public final class Algorithm {
 	 */
 	public static long factorialA(final int n) {
 		// WAY - 01
-		if (n == 0) return 1;
+		if (n == 0)
+			return 1;
 
 		return n * factorial(n - 1);
 	}

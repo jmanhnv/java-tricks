@@ -11,26 +11,20 @@ package algorithms;
  * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
  */
 public class DiamondOfStars {
-
-	public static void main(String[] args) {
-		final int noOfRows = 7;
-		pattern1(noOfRows);
-		pattern2(noOfRows);
-	}
-
 	/**
 	 * Java Program To Print Diamond Of Stars(*).
 	 * 
-	 * @param noOfRows
+	 * @param rows
+	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
 	 */
-	private static void pattern1(final int noOfRows) {
+	public static void diamondOfStars(final int rows) {
 		// Getting midRow of the diamond
-		int midRow = (noOfRows) / 2;
+		int midRow = (rows) / 2;
 
 		// Initializing row with 1
 		int row = 1;
 
-		System.out.println("Here Is Your Diamond:");
+		System.out.println("\nHere Is Your Diamond:");
 
 		// Printing upper half of the diamond
 		for (int i = midRow; i > 0; i--) {
@@ -72,16 +66,17 @@ public class DiamondOfStars {
 	/**
 	 * Java Program To Print Diamond Of Numbers.
 	 * 
-	 * @param noOfRows
+	 * @param rows
+	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/
 	 */
-	private static void pattern2(final int noOfRows) {
+	public static void diamondOfNumbers(final int rows) {
 		// Getting midRow of the diamond
-		int midRow = noOfRows / 2;
+		int midRow = rows / 2;
 
 		// Initializing row with 1
 		int row = 1;
 
-		System.out.println("Here Is Your Diamond:");
+		System.out.println("\nHere Is Your Diamond:");
 
 		// Printing upper half of the diamond
 		for (int i = midRow; i > 0; i--) {

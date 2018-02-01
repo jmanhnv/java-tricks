@@ -15,8 +15,14 @@ import com.google.common.collect.Lists;
 
 import constants.Const;
 
-// http://windybook.com/algorithm-thuat-toan-quay-lui-liet-ke-to-hop-chap-k-cua-n-phan-tu/ (algorithm)
-// http://www.cplusplus.com/forum/beginner/4442/ (create and write file)
+/**
+ * Tinh to hop chap k cua n phan tu.
+ * 
+ * @author Johny
+ * @see http://windybook.com/algorithm-thuat-toan-quay-lui-liet-ke-to-hop-chap-k-cua-n-phan-tu/
+ *      (algorithm)
+ * @see http://www.cplusplus.com/forum/beginner/4442/ (create and write file)
+ */
 public final class ToHopCkn implements Const {
 	private int k;
 	private int n;
@@ -29,7 +35,7 @@ public final class ToHopCkn implements Const {
 		this.k = k;
 		this.n = n;
 		this.lineNbr = 0;
-		this.a = new int[100000];
+		this.a = new int[1000000];
 		this.data = Lists.newArrayList();
 	}
 
@@ -52,42 +58,6 @@ public final class ToHopCkn implements Const {
 			System.out.println(e.getMessage());
 		}
 		return dbConnection;
-	}
-
-	public static void main(String[] args) throws SQLException {
-		// TODO TESTING
-		ToHopCkn cKn = new ToHopCkn(6, 45);
-		long startTime = System.currentTimeMillis();
-
-		cKn.generate();
-
-		List<String> strings = cKn.getData();
-		// write to file
-		cKn.writeFile(strings);
-
-		// for (String s : strings) {
-		// System.out.println(s);
-		// }
-
-		long endTime = System.currentTimeMillis();
-
-		System.out.print("Total line {" + cKn.getLineNbr() + "}. ");
-		System.out.println("Elapsed time to generate {" + (endTime - startTime) / 1000.0 + "} seconds.");
-		System.out.println("----------------------------------");
-
-		// List<String> strings = cKn.getData();
-		// // write to file
-		// // cKn.writeFile(strings);
-		//
-		// System.out.println("First ticket: " + strings.get(0));
-		// // insert into oracle db
-		// startTime = System.currentTimeMillis();
-		//
-		// insertData(strings);
-		//
-		// endTime = System.currentTimeMillis();
-		// System.out.println("Elapsed time to insert {" + (endTime - startTime)
-		// / 1000.0 + "} seconds.");
 	}
 
 	@SuppressWarnings("unused")
@@ -127,8 +97,9 @@ public final class ToHopCkn implements Const {
 
 	void writeFile(final List<String> strings) {
 		try {
-			File dir = new File(CURR_DIR + "/msgs-temp");
-			if (!dir.exists()) dir.mkdir();
+			File dir = new File(CURR_DIR + "/msgs");
+			if (!dir.exists())
+				dir.mkdir();
 
 			File file = new File(dir.getAbsoluteFile() + "/Ckn.txt");
 			if (!file.exists()) {
@@ -148,7 +119,8 @@ public final class ToHopCkn implements Const {
 			}
 			bw.close();
 
-			System.out.println("Done with {" + strings.size() + "} lines.");
+			// System.out.println(String.format("Done with {%d} lines.", strings.size()));
+			System.out.println(String.format("Done with {%d} lines.", getLineNbr()));
 		} catch (FileAlreadyExistsException x) {
 			System.err.format("File named %s" + " already exists%n", File.pathSeparator);
 		} catch (IOException x) {
@@ -163,8 +135,10 @@ public final class ToHopCkn implements Const {
 
 		for (int i = 1; i <= k; i++) {
 			String temp = (a[i] < 10 ? (ZERO + String.valueOf(a[i])) : String.valueOf(a[i]));
-			if (i < k) s += temp + DASH;
-			else s += temp;
+			if (i < k)
+				s += temp + DASH;
+			else
+				s += temp;
 		}
 
 		data.add(s);
@@ -198,4 +172,37 @@ public final class ToHopCkn implements Const {
 		return data;
 	}
 
+	public static void main(String[] args) throws SQLException {
+		// TODO TESTING
+		ToHopCkn cKn = new ToHopCkn(6, 45);
+		long startTime = System.currentTimeMillis();
+
+		cKn.generate();
+
+		List<String> strings = cKn.getData();
+		// write to file
+		cKn.writeFile(strings);
+
+		// for (String s : strings) {
+		// System.out.println(s);
+		// }
+
+		long endTime = System.currentTimeMillis();
+		System.out.println(String.format("Elapsed time to generate {%f} seconds.", (endTime - startTime) / 1000.0));
+		System.out.println("----------------------------------");
+
+		// List<String> strings = cKn.getData();
+		// // write to file
+		// // cKn.writeFile(strings);
+		//
+		// System.out.println("First ticket: " + strings.get(0));
+		// // insert into oracle db
+		// startTime = System.currentTimeMillis();
+		//
+		// insertData(strings);
+		//
+		// endTime = System.currentTimeMillis();
+		// System.out.println("Elapsed time to insert {" + (endTime - startTime)
+		// / 1000.0 + "} seconds.");
+	}
 }

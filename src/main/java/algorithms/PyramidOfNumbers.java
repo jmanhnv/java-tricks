@@ -13,21 +13,9 @@ package algorithms;
  * @see http://javaconceptoftheday.com/how-to-create-pyramid-of-numbers-in-java/
  */
 public class PyramidOfNumbers {
-	public static void main(String[] args) {
-		// Taking noOfRows value from the user as "How Many Rows You Want In Your Pyramid?"
-		int noOfRows = 9;
-
-		// Print
-		pattern1(noOfRows);
-		pattern2(noOfRows);
-		pattern3(noOfRows);
-		pattern4(noOfRows);
-		pattern5(noOfRows);
-		pattern6(noOfRows);
-	}
-
 	/**
-	 * Pattern 1: Write java program to create pyramid of numbers like in Pattern1 of the 'PyramidOfNumbers.png'.
+	 * Pattern 1: Write java program to create pyramid of numbers like in Pattern1
+	 * of the 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * Take the input from the user and assign it to noOfRows. This will be the number of rows he wants in a pyramid.
@@ -39,7 +27,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern1(final int noOfRows) {
+	public static void pattern1(final int noOfRows) {
 		// Initializing rowCount with 1
 
 		int rowCount = 1;
@@ -70,7 +58,8 @@ public class PyramidOfNumbers {
 	}
 
 	/**
-	 * Pattern 2: How to create pyramid of numbers in Java like in Pattern2 of the 'PyramidOfNumbers.png'.
+	 * Pattern 2: How to create pyramid of numbers in Java like in Pattern2 of the
+	 * 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * In this pattern also, we use same logic but instead of printing rowCount value rowCount times at the end of each row,
@@ -79,7 +68,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern2(final int noOfRows) {
+	public static void pattern2(final int noOfRows) {
 		// Initializing rowCount with 1
 
 		int rowCount = 1;
@@ -110,7 +99,8 @@ public class PyramidOfNumbers {
 	}
 
 	/**
-	 * Pattern 3: Write a java program to create pyramid of stars(*) like in the Pattern3 of the 'PyramidOfNumbers.png'.
+	 * Pattern 3: Write a java program to create pyramid of stars(*) like in the
+	 * Pattern3 of the 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * The same logic is used here also. But, instead of printing rowCount or j value at the end of each row, we print star(*).
@@ -118,7 +108,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern3(final int noOfRows) {
+	public static void pattern3(final int noOfRows) {
 		// Initializing rowCount with 1
 
 		int rowCount = 1;
@@ -149,7 +139,8 @@ public class PyramidOfNumbers {
 	}
 
 	/**
-	 * Pattern 4: Write java program to print pyramid of numbers like in the Pattern4 of the 'PyramidOfNumbers.png'.
+	 * Pattern 4: Write java program to print pyramid of numbers like in the
+	 * Pattern4 of the 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * In this problem, we print i*2 spaces at the beginning of each row instead of just i spaces.
@@ -158,7 +149,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern4(final int noOfRows) {
+	public static void pattern4(final int noOfRows) {
 		// Initializing rowCount with 1
 
 		int rowCount = 1;
@@ -195,8 +186,8 @@ public class PyramidOfNumbers {
 	}
 
 	/**
-	 * Pattern 5: Write Java program to print reverse pyramid of numbers like in the Pattern5 of the
-	 * 'PyramidOfNumbers.png'.
+	 * Pattern 5: Write Java program to print reverse pyramid of numbers like in the
+	 * Pattern5 of the 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * In this problem, we iterate outer loop in the reverse order i.e from 1 to noOfRows and initialize the rowCount to noOfRows.
@@ -204,7 +195,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern5(final int noOfRows) {
+	public static void pattern5(final int noOfRows) {
 		// Initializing rowCount with noOfRows
 
 		int rowCount = noOfRows;
@@ -241,7 +232,8 @@ public class PyramidOfNumbers {
 	}
 
 	/**
-	 * Pattern 6: How do you create pyramid of numbers like in the Pattern6 of the 'PyramidOfNumbers.png'.
+	 * Pattern 6: How do you create pyramid of numbers like in the Pattern6 of the
+	 * 'PyramidOfNumbers.png'.
 	 * 
 	 * <pre>
 	 * In this problem, at the end of each row we print ‘j’ where ‘j’ value will be from i to noOfRows and from noOfRows-1 to i.
@@ -249,7 +241,7 @@ public class PyramidOfNumbers {
 	 * 
 	 * @param noOfRows
 	 */
-	private static void pattern6(final int noOfRows) {
+	public static void pattern6(final int noOfRows) {
 		System.out.println("\nHere Is Your Pyramid of Pattern 6");
 
 		// Implementing the logic
