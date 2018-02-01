@@ -311,6 +311,8 @@ public final class Algorithm {
 	 * <p>
 	 * 5. Tinh giai thua cua mot so nguyen n.
 	 * </p>
+	 * Java Factorial Using Recursion Example This Java example shows how to generate factorial of a given number using
+	 * recursive function.
 	 * 
 	 * <pre>
 	 * + Giai thua cua 1 so nguyen duong n la tich tat ca cac so nguyen duong nho hon hoac bang n.
@@ -321,10 +323,10 @@ public final class Algorithm {
 	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
 	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static long recusion(final int n) {
+	public static long factorial(final int n) {
 		if (n == 0) return 1;
 
-		return n * recusion(n - 1);
+		return n * factorial(n - 1);
 	}
 
 	/**
@@ -335,23 +337,7 @@ public final class Algorithm {
 	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
 	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static long removeRecusion(final int n) {
-		long result = 1;
-		for (int i = 1; i <= n; i++)
-			result *= i;
-
-		return result;
-	}
-
-	/**
-	 * Tinh giai thua so so nguyen n.
-	 * 
-	 * @param n
-	 * @return
-	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
-	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
-	 */
-	public static long factorial(final long n) {
+	public static long factorialA(final int n) {
 		// WAY - 01
 		if (n == 0) return 1;
 
@@ -366,28 +352,12 @@ public final class Algorithm {
 	 * @see http://javadevexpress.blogspot.com/2014/01/tong-hop-cac-thuat-toan-co-ban-giai.html
 	 * @see http://diendan.congdongcviet.com/threads/t54134::tong-hop-cac-thuat-toan-co-ban.cpp
 	 */
-	public static int factorial(final int n) {
-		// WAY - 02: using loop
-		int fact = 1;
-		for (int i = n; i > 1; i--)
-			fact *= i;
+	public static long factorialB(final int n) {
+		// WAY - 02
+		long result = 1;
+		for (int i = 1; i <= n; i++)
+			result *= i;
 
-		return fact;
+		return result;
 	}
-
-	/**
-	 * Java Factorial Using Recursion Example This Java example shows how to generate factorial of a given number using
-	 * recursive function.
-	 * 
-	 * @param n
-	 * @return giai thua cua so nguyen n
-	 */
-	public static int fact(final int n) {
-		if (n <= 1)
-			// if the number is 1 then return 1
-			return 1;
-		// else call the same function with the value - 1
-		return n * fact(n - 1);
-	}
-
 }

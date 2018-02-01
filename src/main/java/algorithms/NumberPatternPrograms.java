@@ -1,23 +1,34 @@
 package algorithms;
 
-// http://javaconceptoftheday.com/number-pattern-programs-in-java/
+/**
+ * Number Pattern Programs In Java.
+ * 
+ * <pre>
+ * Java programs to print the numbers or any other symbols in different patterns are one of the frequently asked interview programs mostly for freshers.
+ * Because, they test the candidate’s logical ability as well as coding skills which are ‘must have skills’ for any software engineer.
+ * In this post, I have collected some of the different number pattern programs in java and have tried to solve them.
+ * They can ask you to create number pattern programs like in the below image (NumberPatternPrograms.png).
+ * I hope they will be helpful for you guys.
+ * </pre>
+ * 
+ * @author manhnv
+ * @see http://javaconceptoftheday.com/number-pattern-programs-in-java/
+ */
 public class NumberPatternPrograms {
-	public static void main(String[] args) {
-		// Taking rows value from the user
-		int rows = 7;
 
-		// Execute
-		pattern01(rows);
-		pattern02(rows);
-		pattern03(rows);
-		pattern04(rows);
-		pattern05(rows);
-		pattern06(rows);
-		pattern07(rows);
-		pattern08(rows);
-		pattern09(rows);
+	public static void main(String[] args) {
+		// Taking noOfRows value from the user
+		int rows = 7;
+		pattern1(rows);
+		pattern2(rows);
+		pattern3(rows);
+		pattern4(rows);
+		pattern5(rows);
+		pattern6(rows);
+		pattern7(rows);
+		pattern8(rows);
+		pattern9(rows);
 		pattern10(rows);
-		pattern11(rows);
 		pattern11(rows);
 		pattern12(rows);
 		pattern13(rows);
@@ -26,21 +37,27 @@ public class NumberPatternPrograms {
 		pattern16(rows);
 		pattern17(rows);
 
-		/*
-		 * Pattern 18 refer to {@link PyramidOfNumbers.java} - Different Pyramid Pattern Programs In Java
-		 */
-		/*
-		 * Pattern 19 refer to {@link DiamondPatternProgram.java} - Diamond Pattern Programs In Java
-		 */
-
-		/*
-		 * Pattern 20 refer to {@link FloydsTriangle.java} - Floyd’s Triangle In Java
-		 */
+		pattern18();
+		pattern19();
+		pattern20();
 	}
 
-	private static void pattern01(final int rows) {
-		System.err.println("Here is your Pattern 1....!!!");
+	/**
+	 * Pattern 1
+	 * 
+	 * @param rows
+	 */
+	private static void pattern1(final int rows) {
+		// Pattern 1:
+		// 1
+		// 1 2
+		// 1 2 3
+		// 1 2 3 4
+		// 1 2 3 4 5
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5 6 7
 
+		System.out.println("Here is your pattern....!!!");
 		for (int i = 1; i <= rows; i++) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j + " ");
@@ -50,8 +67,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern02(final int rows) {
-		System.err.println("Here is your Pattern 2....!!!");
+	/**
+	 * Pattern 2
+	 * 
+	 * @param rows
+	 */
+	private static void pattern2(final int rows) {
+		// Pattern 2:
+		// 1
+		// 2 2
+		// 3 3 3
+		// 4 4 4 4
+		// 5 5 5 5 5
+		// 6 6 6 6 6 6
+		// 7 7 7 7 7 7 7
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			for (int j = 1; j <= i; j++) {
@@ -62,11 +93,30 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern03(final int rows) {
-		System.err.println("Here is your Pattern 3....!!!");
+	/**
+	 * Pattern 3
+	 * 
+	 * @param rows
+	 */
+	private static void pattern3(final int rows) {
+		// Pattern 3:
+		// 1
+		// 1 2
+		// 1 2 3
+		// 1 2 3 4
+		// 1 2 3 4 5
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5 6 7
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5
+		// 1 2 3 4
+		// 1 2 3
+		// 1 2
+		// 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		// Printing upper half of the pattern
-
 		for (int i = 1; i <= rows; i++) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j + " ");
@@ -76,7 +126,6 @@ public class NumberPatternPrograms {
 		}
 
 		// Printing lower half of the pattern
-
 		for (int i = rows - 1; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j + " ");
@@ -86,8 +135,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern04(final int rows) {
-		System.err.println("Here is your Pattern 4....!!!");
+	/**
+	 * Pattern 4
+	 * 
+	 * @param rows
+	 */
+	private static void pattern4(final int rows) {
+		// Pattern 4:
+		// 1 2 3 4 5 6 7
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5
+		// 1 2 3 4
+		// 1 2 3
+		// 1 2
+		// 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = rows; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
@@ -98,8 +161,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern05(final int rows) {
-		System.err.println("Here is your Pattern 5....!!!");
+	/**
+	 * Pattern 5
+	 * 
+	 * @param rows
+	 */
+	private static void pattern5(final int rows) {
+		// Pattern 5:
+		// 7 6 5 4 3 2 1
+		// 7 6 5 4 3 2
+		// 7 6 5 4 3
+		// 7 6 5 4
+		// 7 6 5
+		// 7 6
+		// 7
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			for (int j = rows; j >= i; j--) {
@@ -110,8 +187,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern06(final int rows) {
-		System.err.println("Here is your Pattern 6....!!!");
+	/**
+	 * Pattern 6
+	 * 
+	 * @param rows
+	 */
+	private static void pattern6(final int rows) {
+		// Pattern 6:
+		// 7
+		// 7 6
+		// 7 6 5
+		// 7 6 5 4
+		// 7 6 5 4 3
+		// 7 6 5 4 3 2
+		// 7 6 5 4 3 2 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = rows; i >= 1; i--) {
 			for (int j = rows; j >= i; j--) {
@@ -122,8 +213,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern07(final int rows) {
-		System.err.println("Here is your Pattern 7....!!!");
+	/**
+	 * Pattern 7
+	 * 
+	 * @param rows
+	 */
+	private static void pattern7(final int rows) {
+		// Pattern 7:
+		// 7 6 5 4 3 2 1
+		// 6 5 4 3 2 1
+		// 5 4 3 2 1
+		// 4 3 2 1
+		// 3 2 1
+		// 2 1
+		// 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = rows; i >= 1; i--) {
 			for (int j = i; j >= 1; j--) {
@@ -134,11 +239,30 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern08(final int rows) {
-		System.err.println("Here is your Pattern 8....!!!");
+	/**
+	 * Pattern 8
+	 * 
+	 * @param rows
+	 */
+	private static void pattern8(final int rows) {
+		// Pattern 8:
+		// 1 2 3 4 5 6 7
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5
+		// 1 2 3 4
+		// 1 2 3
+		// 1 2
+		// 1
+		// 1 2
+		// 1 2 3
+		// 1 2 3 4
+		// 1 2 3 4 5
+		// 1 2 3 4 5 6
+		// 1 2 3 4 5 6 7
+
+		System.out.println("Here is your pattern....!!!");
 
 		// Printing upper half of the pattern
-
 		for (int i = rows; i >= 1; i--) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j + " ");
@@ -148,7 +272,6 @@ public class NumberPatternPrograms {
 		}
 
 		// Printing lower half of the pattern
-
 		for (int i = 2; i <= rows; i++) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print(j + " ");
@@ -158,8 +281,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
-	private static void pattern09(final int rows) {
-		System.err.println("Here is your Pattern 9....!!!");
+	/**
+	 * Pattern 9
+	 * 
+	 * @param rows
+	 */
+	private static void pattern9(final int rows) {
+		// Pattern 9:
+		// 1
+		// 1 2 1
+		// 1 2 3 2 1
+		// 1 2 3 4 3 2 1
+		// 1 2 3 4 5 4 3 2 1
+		// 1 2 3 4 5 6 5 4 3 2 1
+		// 1 2 3 4 5 6 7 6 5 4 3 2 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			// Printing first half of the row
@@ -178,8 +315,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 10
+	 * 
+	 * @param rows
+	 */
 	private static void pattern10(final int rows) {
-		System.err.println("Here is your Pattern 10....!!!");
+		// Pattern 10:
+		// 1
+		// 2 1
+		// 3 2 1
+		// 4 3 2 1
+		// 5 4 3 2 1
+		// 6 5 4 3 2 1
+		// 7 6 5 4 3 2 1
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			for (int j = i; j >= 1; j--) {
@@ -190,20 +341,40 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 11
+	 * 
+	 * @param rows
+	 */
 	private static void pattern11(final int rows) {
-		System.err.println("Here is your Pattern 11....!!!");
+		// @formatter:off
+
+		//Pattern 11:
+		//		1234567
+		//		 234567
+		//		  34567
+		//		   4567
+		//		    567
+		//		     67
+		//		      7
+		//		     67
+		//		    567
+		//		   4567
+		//		  34567
+		//		 234567
+		//		1234567
+		
+		// @formatter:on
+		System.out.println("Here is your pattern....!!!");
 
 		// Printing upper half of the pattern
-
 		for (int i = 1; i <= rows; i++) {
 			// Printing i spaces at the beginning of each row
-
 			for (int j = 1; j < i; j++) {
 				System.out.print(" ");
 			}
 
 			// Printing i to rows value at the end of each row
-
 			for (int j = i; j <= rows; j++) {
 				System.out.print(j);
 			}
@@ -212,16 +383,13 @@ public class NumberPatternPrograms {
 		}
 
 		// Printing lower half of the pattern
-
 		for (int i = rows - 1; i >= 1; i--) {
 			// Printing i spaces at the beginning of each row
-
 			for (int j = 1; j < i; j++) {
 				System.out.print(" ");
 			}
 
 			// Printing i to rows value at the end of each row
-
 			for (int j = i; j <= rows; j++) {
 				System.out.print(j);
 			}
@@ -230,20 +398,39 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 12
+	 * 
+	 * @param rows
+	 */
 	private static void pattern12(final int rows) {
-		System.err.println("Here is your Pattern 12....!!!");
+		// @formatter:off
+		//Pattern 12:
+		//	1 2 3 4 5 6 7 
+		//	 2 3 4 5 6 7 
+		//	  3 4 5 6 7 
+		//	   4 5 6 7 
+		//	    5 6 7 
+		//	     6 7 
+		//	      7 
+		//	     6 7 
+		//	    5 6 7 
+		//	   4 5 6 7 
+		//	  3 4 5 6 7 
+		//	 2 3 4 5 6 7 
+		//	1 2 3 4 5 6 7
+		
+		// @formatter:on
+		System.out.println("Here is your pattern....!!!");
 
 		// Printing upper half of the pattern
-
 		for (int i = 1; i <= rows; i++) {
 			// Printing i spaces at the beginning of each row
-
 			for (int j = 1; j < i; j++) {
 				System.out.print(" ");
 			}
 
 			// Printing i to rows value at the end of each row
-
 			for (int j = i; j <= rows; j++) {
 				System.out.print(j + " ");
 			}
@@ -252,16 +439,13 @@ public class NumberPatternPrograms {
 		}
 
 		// Printing lower half of the pattern
-
 		for (int i = rows - 1; i >= 1; i--) {
 			// Printing i spaces at the beginning of each row
-
 			for (int j = 1; j < i; j++) {
 				System.out.print(" ");
 			}
 
 			// Printing i to rows value at the end of each row
-
 			for (int j = i; j <= rows; j++) {
 				System.out.print(j + " ");
 			}
@@ -270,8 +454,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 13
+	 * 
+	 * @param rows
+	 */
 	private static void pattern13(final int rows) {
-		System.err.println("Here is your Pattern 13....!!!");
+		// Pattern 13:
+		// 1
+		// 10
+		// 101
+		// 1010
+		// 10101
+		// 101010
+		// 1010101
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			for (int j = 1; j <= i; j++) {
@@ -286,8 +484,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 14
+	 * 
+	 * @param rows
+	 */
 	private static void pattern14(final int rows) {
-		System.err.println("Here is your Pattern 14....!!!");
+		// Pattern 14:
+		// 1010101
+		// 0101010
+		// 1010101
+		// 0101010
+		// 1010101
+		// 0101010
+		// 1010101
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			int num;
@@ -314,8 +526,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 15
+	 * 
+	 * @param rows
+	 */
 	private static void pattern15(final int rows) {
-		System.err.println("Here is your Pattern 15....!!!");
+		// Pattern 15:
+		// 1111111
+		// 1111122
+		// 1111333
+		// 1114444
+		// 1155555
+		// 1666666
+		// 7777777
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			for (int j = 1; j <= rows - i; j++) {
@@ -330,8 +556,22 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 16
+	 * 
+	 * @param rows
+	 */
 	private static void pattern16(final int rows) {
-		System.err.println("Here is your Pattern 16....!!!");
+		// Pattern 16:
+		// 0000000
+		// 0100000
+		// 0020000
+		// 0003000
+		// 0000400
+		// 0000050
+		// 0000006
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < rows; j++) {
@@ -346,8 +586,20 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 17
+	 * 
+	 * @param rows
+	 */
 	private static void pattern17(final int rows) {
-		System.err.println("Here is your Pattern 17....!!!");
+		// Pattern 17: right with rows = 5
+		// 1
+		// 2 6
+		// 3 7 10
+		// 4 8 11 13
+		// 5 9 12 14 15
+
+		System.out.println("Here is your pattern....!!!");
 
 		for (int i = 1; i <= rows; i++) {
 			int num = i;
@@ -362,4 +614,36 @@ public class NumberPatternPrograms {
 		}
 	}
 
+	/**
+	 * Pattern 18. Different Pyramid Pattern Programs In Java.
+	 * 
+	 * @see http://javaconceptoftheday.com/how-to-create-pyramid-of-numbers-in-java/ {@link PyramidOfNumbers}
+	 */
+	private static void pattern18() {
+		// Pattern 18: Different Pyramid Pattern Programs In Java
+		// TODO - refer to PyramidOfNumbers.java
+		System.out.println("Different Pyramid Pattern Programs In Java - PyramidOfNumbers.java");
+	}
+
+	/**
+	 * Pattern 19. Diamond Pattern Programs In Java.
+	 * 
+	 * @see http://javaconceptoftheday.com/diamond-pattern-program-in-java/ {@link DiamondOfStars}
+	 */
+	private static void pattern19() {
+		// Pattern 19: Diamond Pattern Programs In Java
+		// TODO - refer to DiamondOfStars.java
+		System.out.println("Diamond Pattern Programs In Java - DiamondOfStars.java");
+	}
+
+	/**
+	 * Pattern 20. Floyd’s Triangle In Java.
+	 * 
+	 * @see http://javaconceptoftheday.com/how-to-print-floyds-triangle-in-java/ {@link FloydsTriangle}
+	 */
+	private static void pattern20() {
+		// Pattern 20: Floyd’s Triangle In Java
+		// TODO - refer to FloydsTriangle.java
+		System.out.println("Floyd’s Triangle In Java - FloydsTriangle.java");
+	}
 }

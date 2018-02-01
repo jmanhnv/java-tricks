@@ -45,11 +45,10 @@ public class App {
 
 		// 5. Tinh Giai thua
 		System.out.println("*** Tinh 14! = ? ***");
-		System.out.println(Algorithm.recusion(14));
-		System.out.println(Algorithm.removeRecusion(14));
+		System.out.println(Algorithm.factorial(14));
+		System.out.println(Algorithm.factorialA(14));
+		System.out.println(Algorithm.factorialB(14));
 
-		//
-		System.out.println(Algorithm.fact(14));
 	}
 
 }
