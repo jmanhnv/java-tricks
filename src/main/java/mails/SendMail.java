@@ -1,12 +1,3 @@
-/*
- * FILENAME SendMail.java FILE LOCATION $Source$ VERSION $Id$
- * @version $Revision$ Check-Out Tag: $Name$ Locked By: $Lockers$ FORMATTING NOTES * Lines should be limited to 78
- * characters. * Files should contain no tabs. * Indent code using four-character increments. COPYRIGHT Copyright (C)
- * 2007 Genix Ventures Pty. Ltd. All rights reserved. This software is the confidential and proprietary information of
- * Genix Ventures ("Confidential Information"). You shall not disclose such Confidential Information and shall use it
- * only in accordance with the terms of the license agreement you entered into with Genix Ventures.
- */
-
 package mails;
 
 import java.util.Properties;
@@ -20,11 +11,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-//
-// IMPORTS
-// NOTE: Import specific classes without using wildcards.
-//
-
 /**
  * Send a Simple E-mail.
  * 
@@ -34,9 +20,9 @@ public class SendMail {
 	private static final String CONTENT_TYPE = "text/plain";
 
 	// Setup mail server
-	private static final String SMTP_HOST_NAME = "74.50.54.93";
-	private static final String SMTP_AUTH_USER = "nguyen.van.manh";
-	private static final String SMTP_AUTH_PWD = "0987654321";
+	private static final String SMTP_HOST_NAME = "103.15.48.243";
+	private static final String SMTP_AUTH_USER = "manh.1403@cokhituean.com";
+	private static final String SMTP_AUTH_PWD = "W3lc0me!";
 
 	/**
 	 * <p>
@@ -79,8 +65,7 @@ public class SendMail {
 
 		// Recipient's email ID needs to be mentioned.
 		Address[] recipients = { new InternetAddress("nguyen.van.manh@vsi-international.com"),
-				new InternetAddress("manh.1403@gmail.com"), new InternetAddress("pham.xuan.hung@vsi-international.com"),
-				new InternetAddress("nguyen.thi.thanh.nhan@vsi-international.com") };
+				new InternetAddress("manh.1403@gmail.com") };
 
 		// Set From: header field of the header.
 		message.setFrom(new InternetAddress(from));

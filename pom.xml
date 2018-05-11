@@ -38,7 +38,6 @@
 		<sqlserver.version>4.0</sqlserver.version>
 		<postgresql.version>42.1.4</postgresql.version>
 		<db2.version>10.5</db2.version>
-		<javax.mail.version>1.6.0</javax.mail.version>
 		<quartz.version>2.3.0</quartz.version>
 	</properties>
 
@@ -75,9 +74,9 @@
 			<version>${quartz.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>javax.mail-api</artifactId>
-			<version>${javax.mail.version}</version>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
